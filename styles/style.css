@@ -1,0 +1,833 @@
+@import url("https://fonts.googleapis.com/css2?family=Lalezar&display=swap");
+
+/* font-family: 'Lalezar', cursive; */
+
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+
+/* font-family: 'Oswald', sans-serif; */
+
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+
+/* font-family: 'Great Vibes', cursive; */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+body {
+  background-image: url(../assets/playa.jpg);
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  padding: 0.1px;
+  z-index: -100;
+}
+
+@media (width >= 320px) {
+  .portfolio {
+    background-image: url(../assets/playa.jpg);
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    padding: 0.1px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .portfolio__navbar {
+    backdrop-filter: blur(5px) saturate(200%);
+    background-color: rgba(255, 255, 255, 0.37);
+    border: 1px solid rgba(209, 213, 219, 0.3);
+    height: 48px;
+    padding: 10px 12px;
+    position: relative;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+  }
+  .portfolio__navbar img {
+    width: 18%;
+    height: 170%;
+  }
+  .portfolio__navbar__title {
+    visibility: hidden;
+  }
+
+  .portfolio__menu-item {
+    font-family: "Oswald", sans-serif;
+  }
+  .portfolio__navbar__checkbox,
+  .portfolio__navbar__icon {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    cursor: pointer;
+    color: #ffffff;
+    z-index: 1001;
+  }
+  .portfolio__navbar__icon {
+    pointer-events: none;
+    font-size: 24px;
+  }
+  .portfolio__navbar__checkbox {
+    opacity: 0;
+  }
+  .fi-ss-apps-delete {
+    display: none;
+  }
+  .portfolio__navbar__checkbox:checked ~ .fi-ss-apps-add {
+    display: none;
+  }
+  .portfolio__navbar__checkbox ~ .fi-ss-apps-delete {
+    display: block;
+  }
+  .portfolio__menu {
+    width: 200px;
+    position: absolute;
+    z-index: -10;
+    right: 0;
+    transition: 250ms;
+    width: 57%;
+    transform: translateY(-65%);
+  }
+  .portfolio__menu li a {
+    display: block;
+    color: #000000;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px 12px;
+  }
+  .portfolio__menu a:hover {
+    background-color: #e72e7c;
+  }
+  .portfolio__navbar__checkbox:checked ~ .portfolio__menu {
+    transform: translateY(63%);
+  }
+  .portfolio__container {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    margin-top: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+  }
+  .portfolio__header {
+    width: auto;
+    backdrop-filter: blur(5px) saturate(200%);
+    background-color: rgba(255, 255, 255, 0.37);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-top-left-radius: 5%;
+    border-top-right-radius: 5%;
+  }
+  .portfolio__header-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    min-height: 230px;
+  }
+  .portfolio__header-text {
+    width: 42%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+  }
+  .portfolio__header-title {
+    margin-top: 100px;
+    font-family: "Lalezar", cursive;
+    color: #fff;
+    font-size: 2rem;
+    transform: rotate(-90deg);
+    padding: 0;
+  }
+  .portfolio__header-subtitle {
+    width: 58%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    margin-left: 8px;
+    text-align: left;
+  }
+  .portfolio__header-subtitle-one {
+    font-family: "Oswald", sans-serif;
+    color: #fff;
+    font-size: 0.8rem;
+    padding: 0;
+  }
+  .portfolio__header-subtitle-two {
+    font-family: "Lalezar", cursive;
+    color: #fff;
+    font-size: 1.3rem;
+    padding: 0;
+  }
+
+  .portfolio__header-subtitle-three {
+    font-family: "Oswald", sans-serif;
+    color: #fff;
+    font-size: 1rem;
+    background-color: #e72e7c;
+    padding: 5px;
+    margin-right: 8px;
+    border-radius: 10px;
+  }
+  .portfolio__header-coverphoto {
+    width: auto;
+    margin-bottom: 50px;
+  }
+  .portfolio__header-coverphoto img {
+    width: 100%;
+    border-radius: 10%;
+  }
+  .portfolio__who {
+    width: auto;
+    backdrop-filter: blur(5px) saturate(200%);
+    background-color: rgba(255, 255, 255, 0.37);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 50px;
+    gap: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 50px;
+  }
+  .portfolio__who-text{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .portfolio__who-text-title {
+    font-family: "Oswald", sans-serif;
+  }
+  .portfolio__who-text-greeting {
+    font-family: "Lalezar", cursive;
+  }
+  .portfolio__who-text-description {
+    font-family: "Oswald", sans-serif;
+  }
+  .portfolio__who-image {
+    width: auto;
+    margin-bottom: 50px;
+  }
+  .portfolio__who-image img {
+    width: 100%;
+    border-radius: 10%;
+  }
+  .portfolio__skills {
+    width: auto;
+    backdrop-filter: blur(5px) saturate(200%);
+    background-color: rgba(255, 255, 255, 0.37);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding-top: 50px;
+  }
+  .portfolio__skills-title {
+    font-family: "Lalezar", cursive;
+  }
+  .portfolio__skills-icons{
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 50px;
+
+  }
+  .portfolio__skills-icons a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+  }
+  .portfolio__skills-icons a img {
+    width: 100%;
+   
+  }
+
+  .portfolio__projects {
+    width: auto;
+    backdrop-filter: blur(5px) saturate(200%);
+    background-color: rgba(255, 255, 255, 0.37);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 50px;
+  }
+  .portfolio__projects-title {
+    font-family: "Lalezar", cursive;
+  }
+  .portfolio__projects-image {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+  .portfolio__projects-image-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+  }
+ 
+  .portfolio__projects-image-link h3 {
+    font-family: "Oswald", sans-serif;
+    font-size: 1rem;
+    margin-top: -30%;
+    margin-bottom: 30%;
+  }
+  .portfolio__projects-image a img {
+    width: 100%;
+    height: 85%;
+    margin-bottom: 50px;
+  }
+  .portfolio__contact {
+    width: auto;
+    backdrop-filter: blur(5px) saturate(200%);
+    background-color: rgba(255, 255, 255, 0.37);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 50px;
+    border-bottom-right-radius: 5%;
+    border-bottom-left-radius: 5%;
+  }
+  .portfolio__contact-title {
+    font-family: "Lalezar", cursive;
+  }
+  .portfolio__contact__container {
+    height: 175px;
+    background-image: url(../assets/playa.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    overflow: hidden;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 5%;
+    border-top-right-radius: 5%;
+    border: 1px solid rgba(209, 213, 219, 0.3);
+  }
+
+  .portfolio__contact__container-image img {
+    border-radius: 50px;
+    height: 75px;
+  }
+
+  .portfolio__contact-fieldset {
+    margin-top: 10%;
+    border: 1px solid rgba(209, 213, 219, 0.3);
+    font-family: "Oswald", sans-serif;
+  }
+
+  form label {
+    width: 100%;
+    font-weight: bold;
+    display: inline-block;
+    font-family: "Oswald", sans-serif;
+  }
+  form input[type="text"],
+  form input[type="email"] {
+    width: 100%;
+    padding: 3px 10px;
+    border: 1px solid #f6f6f6;
+    border-radius: 3px;
+    background-color: #f6f6f6;
+    margin: 8px 0;
+    display: inline-block;
+  }
+
+  textarea {
+    width: 100%;
+    height: 100px;
+    border: 1px solid #f6f6f6;
+    border-radius: 3px;
+    background-color: #f6f6f6;
+    margin: 8px 0;
+    resize: none;
+    display: block;
+  }
+  .portfolio__contact-btn {
+    margin-bottom: 50px;
+  }
+  form input[type="submit"] {
+    width: 100%;
+    padding: 8px 16px;
+    margin-top: 32px;
+    border: 1px solid #e72e7c;
+    border-radius: 5px;
+    display: block;
+    color: #fff;
+    background-color: #e72e7c;
+    font-family: "Oswald", sans-serif;
+  }
+
+  form input[type="submit"]:hover {
+    cursor: pointer;
+    color: #e72e7c;
+    background-color: #fff;
+    border: 1px solid #fff;
+  }
+  .portfolio__thanks {
+    font-family: "Great Vibes", cursive;
+    font-size: 2rem;
+    color: #ffffff;
+    text-shadow: 0.1em 0.2em 0.2em black;
+    position: relative;
+    bottom: 0;
+    margin-top: 5%;
+  }
+  .portfolio__download {
+    width: 50%;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3%;
+    color: #e72e7c;
+    background-color: #fff;
+    border-radius: 15px;
+  }
+  .fa-cloud-arrow-down {
+    padding-right: 15px;
+  }
+  .portfolio__download:hover {
+    color: #fff;
+    background-color: #e72e7c;
+  }
+  .portfolio__footer {
+    backdrop-filter: blur(5px) saturate(200%);
+    background-color: rgba(255, 255, 255, 0.37);
+    border: 1px solid rgba(209, 213, 219, 0.3);
+    position: relative;
+    margin-top: 5%;
+    padding: 5% 5%;
+  }
+  .portfolio__footer-rrss {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3%;
+  }
+  .fa-instagram,
+  .fa-facebook,
+  .fa-linkedin-in {
+    font-size: 1.3rem;
+    color: white;
+  }
+  svg {
+    height: 1.4rem;
+    color: white;
+  }
+  footer p {
+    font-family: "Oswald", sans-serif;
+  }
+}
+@media (width >= 375px) {
+  .portfolio__navbar img {
+    width: 16%;
+  }
+  .portfolio__container {
+    margin-top: 18%;
+  }
+  .portfolio__header-subtitle-one {
+    font-size: 1rem;
+    padding: 0;
+  }
+  .portfolio__header-subtitle-two {
+    font-size: 1.5rem;
+  }
+
+  .portfolio__header-subtitle-three {
+    font-size: 1.3rem;
+    margin-right: 20px;
+  }
+  .portfolio__who-text-title {
+    font-size: 1.5rem;
+  }
+  .portfolio__who-text-greeting {
+    font-size: 2rem;
+  }
+  .portfolio__skills-title,
+  .portfolio__projects-title,
+  .portfolio__contact-title {
+    font-size: 2rem;
+  }
+  .portfolio__skills-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+  }
+  .portfolio__footer {
+    padding: 4% ;
+  }
+}
+@media (width >= 450px) {
+  .portfolio__navbar img {
+    width: 15%;
+  }
+  .portfolio__header-coverphoto img {
+    width: 90%;
+  }
+  .portfolio__who-image img {
+    width: 90%;
+  }
+  .portfolio__skills-icons {
+    gap: 10%;
+  }
+  .portfolio__skills-icons a{
+    width: 18%;
+  }
+  .portfolio__projects-image-link h3 {
+    margin-top: -20%;
+  }
+}
+@media (width >= 468px) {
+  .portfolio__navbar img {
+    width: 13%;
+  }
+  .portfolio__container {
+    margin-top: 15%;
+  }
+}
+@media (width >= 485px) {
+  .portfolio__navbar img {
+    width: 12%;
+  }
+  .portfolio__contact-form {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (width >= 500px) {
+  .portfolio__container {
+    margin-top: 15%;
+  }
+}
+
+@media (width >= 550px) {
+  .portfolio__navbar__title {
+    visibility: visible;
+    color: #fff;
+    margin-right: 60%;
+    font-family: "Lalezar", cursive;
+  }
+  .portfolio__header-subtitle-one {
+    font-size: 1.5rem;
+    padding: 0;
+  }
+  .portfolio__header-subtitle-two {
+    font-size: 2rem;
+  }
+
+  .portfolio__header-subtitle-three {
+    font-size: 1.5rem;
+    margin-right: 0;
+  }
+
+  .portfolio__header-container {
+    justify-content: center;
+  }
+  .portfolio__header-subtitle {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .portfolio__header-coverphoto img {
+    width: 85%;
+  }
+
+  .portfolio__who-image img {
+    width: 85%;}
+    .portfolio__skills {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .portfolio__skills-icons {
+      width: 95%;
+      gap: 10%;
+    }
+    .portfolio__skills-icons a {
+      width: 20%;
+    }
+    .portfolio__projects {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .portfolio__projects-image {
+      width: 95%;
+    }
+    .portfolio__contact {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .portfolio__contact-form {
+      width: 95%;
+    }
+
+    .portfolio__header-text {
+      display: none;
+    }
+    .portfolio__contact-form {
+      width: 90%;
+    }
+  }
+  @media (width >= 600px) {
+    .portfolio__who-greeting {
+      font-size: 2.5rem;
+    }
+    .portfolio__who-description {
+      font-size: 1.3rem;
+    }
+    .portfolio__skills-title,
+    .portfolio__projects-title,
+    .portfolio__contact-title {
+      font-size: 2.5rem;
+    }
+    .portfolio__skills-icons a {
+      width: 18%;
+    }
+    .portfolio__projects-image-link h3 {
+      font-size: 1.2rem;
+      margin-top: -10%;
+    }
+    .portfolio__contact__container-image img {
+      border-radius: 50px;
+      height: 100px;
+    }
+    .portfolio__contact-fieldset {
+      font-size: 1.2rem;
+    }
+    .portfolio__contact-btn {
+      font-size: 1.5rem;
+    }
+    .portfolio__contact-form {
+      width: 85%;
+    }
+    .portfolio__footer {
+      padding: 3% ;
+    }
+  }
+
+  @media (width >= 700px) {
+    .portfolio__header-subtitle-one {
+      font-size: 1.5rem;
+    }
+    .portfolio__header-subtitle-two {
+      font-size: 2.5rem;
+    }
+
+    .portfolio__header-subtitle-three {
+      font-size: 1.5rem;
+    }
+    .portfolio__header-coverphoto img {
+      width: 80%;
+    }
+    .portfolio__who-image img {
+      width: 80%;
+    }
+    .portfolio__skills-icons {
+
+          gap: 15%;
+    }
+    .portfolio__skills-icons a {
+      width: 15%;
+    }
+    .portfolio__projects-image-link a img{
+      width: 100%;
+    }
+    .portfolio__contact-form {
+      width: 80%;
+    }
+  }
+  @media (width >= 738px) {
+    .portfolio__navbar__title {
+      margin-right: 65%;
+    }
+  }
+  @media (width >= 768px) {
+    .portfolio__navbar{
+      justify-content: space-around;
+    
+    }
+   .portfolio__navbar img{
+   width: 8%;
+   }
+    .portfolio__navbar__checkbox,
+    .fi-ss-apps-add,
+    .fi-ss-apps-delete {
+      display: none;
+      visibility: hidden;
+    }
+    .portfolio__menu {
+      width: unset;
+      display: flex;
+      transform: translateY(0);
+      margin-right: 5%;
+    }
+    .portfolio__menu li a {
+      background-color: transparent;
+    }
+    .portfolio__container{
+      margin-top: 10%;
+    }
+    .portfolio__header {
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+    }
+
+    .portfolio__header-subtitle {
+      width: 70%;
+      margin-left: 0;
+    }
+    .portfolio__header-coverphoto {
+      width: 55%;
+      margin-top: 5%;
+      margin-bottom: 5%;
+      margin-left: 5%;
+      order: -1;
+    }
+    .portfolio__header-coverphoto img {
+      width: 100%;
+      background-size: cover;
+      background-position: center;
+    }
+    .portfolio__who{
+      flex-direction: row;
+    }
+    .portfolio__who-text{
+      flex-direction: column;
+      justify-content: center;
+      width: 40%;
+      gap: 10%;
+    }
+    .portfolio__who-text-greeting{
+      font-size: 3rem;
+    }
+    .portfolio__who-image{
+      width: 45%;
+      
+    }
+    .portfolio__who-description img {
+      width: 100%;
+      background-size: cover;
+      background-position: center;
+    }
+    .portfolio__contact-form {
+      width: 70%;
+    }
+  }
+
+  @media (width >= 1024px) {
+    .portfolio__skills-icons a {
+      width: 12%;
+    }
+    .portfolio__container{
+      margin-top: 8%;
+    }
+    .portfolio__projects-image-link{
+      width: 20%;
+    }
+    .portfolio__contact-form{
+      width: 60%;
+    }
+    .portfolio__footer {
+      padding: 2% ;
+    }
+  }
+  @media (width >= 1200px) {
+    .portfolio__container{
+      margin-top: 6%;
+    }
+    .portfolio__contact-form{
+      width: 60%;
+    }
+    .portfolio__header-coverphoto {
+      width: 40%;
+      margin-top: 5%;
+      margin-bottom: 5%;
+      margin-left: 5%;
+      order: -1;
+    }
+    .portfolio__header-subtitle-one {
+      font-size: 2rem;
+    }
+    .portfolio__header-subtitle-two {
+      font-size: 3.8rem;
+    }
+
+    .portfolio__header-subtitle-three {
+      font-size: 2.5rem;
+    }
+    .portfolio__header-coverphoto img {
+      width: 100%;
+      background-size: cover;
+      background-position: center;
+    }
+   
+    .portfolio__who-text{
+   width: 40%;
+        }
+    .portfolio__who-text-title{
+          font-size: 2rem;
+        }
+    .portfolio__who-text-greeting{
+      font-size: 4rem;
+    }
+    .portfolio__who-text-description{
+      font-size: 1.5rem;
+    }
+    .portfolio__who-image{
+      width: 35%;
+      
+    }
+   .portfolio__skills-icons{
+    width: 90%;
+   }
+   .portfolio__skills-icons a{
+    width: 12%;
+   }
+    .portfolio__contact-form {
+      width: 50%;
+    } 
+    .portfolio__footer {
+      padding: 1% ;
+    }
+  }
