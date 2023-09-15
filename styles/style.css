@@ -773,6 +773,9 @@ body {
     }
   }
   @media (width >= 1200px) {
+    .portfolio__navbar img {
+      width: 5%;
+    }
     .portfolio__container{
       margin-top: 6%;
     }
